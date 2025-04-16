@@ -56,8 +56,8 @@ def print_matrix(matrix):
         print(",".join(map(str, row)))
 
 
-def main():
-    file_path = input("Enter file path containing matrices: ")
+def main(file_path, operation):
+    # file_path = input("Enter file path containing matrices: ")
     matrices = read_matrix(file_path)
     if len(matrices) != 2:
         print("Error: File must contain exactly two matrices separated by blank line.")
@@ -69,7 +69,7 @@ def main():
     print("\nMatrix 2:")
     print_matrix(matrix2)
 
-    operation = input("\nSelect operation (+, -, *): ").strip()
+    # operation = input("\nSelect operation (+, -, *): ").strip()
     if operation == "+":
         result = matrix_addition(matrix1, matrix2)
         if result is None:
@@ -96,6 +96,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
-
-# input file: ./Group project2/Q8_matrices_inputfile.txt
+    main("./Group project2/Q8_test_case1.txt", "*")
+    main("./Group project2/Q8_test_case2.txt", "-")
